@@ -1,0 +1,341 @@
+{
+    "workExperience": [
+        {
+            "companyTitle": "PaperG",
+            "companyLocation": "Bellevue, WA",
+            "datesOfEmployment": "Nov 2014 - Present",
+            "jobTitle": "Software Engineer",
+            "jobSkills": [
+                {
+                    "skillName": "Javascript",
+                    "skillType": "Language",
+                    "lvl": 5
+                },
+                {
+                    "skillName": "PHP",
+                    "skillType": "Language",
+                    "lvl": 2
+                },
+                {
+                    "skillName": "SQL",
+                    "skillType": "Language",
+                    "lvl": 1
+                },
+                {
+                    "skillName": "JSON",
+                    "skillType": "Notation",
+                    "lvl": 3
+                },
+                {
+                    "skillName": "Backbone",
+                    "skillType": "Framework",
+                    "lvl": 3
+                },
+                {
+                    "skillName": "React",
+                    "skillType": "Library",
+                    "lvl": 3
+                },
+                {
+                    "skillName": "Handlebars",
+                    "skillType": "Library",
+                    "lvl": 3
+                },
+                {
+                    "skillName": "Grunt",
+                    "skillType": "Build Automation",
+                    "lvl": 3
+                },
+                {
+                    "skillName": "CSS",
+                    "skillType": "Notation",
+                    "lvl": 3
+                },
+                {
+                    "skillName": "Sass",
+                    "skillType": "Notation",
+                    "lvl": 4
+                },
+                {
+                    "skillName": "HTML",
+                    "skillType": "Markup Language",
+                    "lvl": 4
+                }
+            ],
+            "notableFacts" : [
+                {
+                    "fact": "Constantly building and improving on product through a weekly release cycle.",
+                    "subFacts": [
+                        "Collaborating with senior engineer and lead PM to consistenly deliver on new features everyweek."
+                    ]
+                },
+                {
+                    "fact": "Building new font-end features that will be the more impactful for our customiers.",
+                    "subFacts": [
+                        "Built infinite scrolling chat selecting using Google Font API, product now has ~875 choices in fonts.",
+                        "Implemented dragging the mouse to select multiple widgets, and mass editing of multiple widgets."
+                    ]
+                },
+                {
+                    "fact": "Refactored older systems to more readable and performant code.",
+                    "subFacts": [
+                        "Rebuilt drag and drop photo uploading, implemented a progress bar, spinner, and concurrent uploading."
+                    ]
+                }
+            ]
+        },
+        {
+            "companyTitle": "Rally Software",
+            "companyLocation": "Kirkland, WA",
+            "datesOfEmployment": "April 2014 - Oct 2014",
+            "jobTitle": "Software Engineer",
+            "jobSkills": [
+                {
+                    "skillName": "Javascript",
+                    "skillType": "Language",
+                    "lvl": 5
+                },
+                {
+                    "skillName": "AngularJS",
+                    "skillType": "Framework",
+                    "lvl": 5
+                },
+                {
+                    "skillName": "Java",
+                    "skillType": "Language",
+                    "lvl": 5
+                },
+                {
+                    "skillName": "Groovy",
+                    "skillType": "Language",
+                    "lvl": 4
+                },
+                {
+                    "skillName": "SQL",
+                    "skillType": "Language",
+                    "lvl": 2
+                },
+                {
+                    "skillName": "Oracle",
+                    "skillType": "Database",
+                    "lvl": 2
+                },
+                {
+                    "skillName": "MySQL",
+                    "skillType": "Database",
+                    "lvl": 2
+                },
+                {
+                    "skillName": "PostgreSQL",
+                    "skillType": "Database",
+                    "lvl": 2
+                },
+                {
+                    "skillName": "MongoDB",
+                    "skillType": "Database",
+                    "lvl": 2
+                },
+                {
+                    "skillName": "Grails",
+                    "skillType": "Framework",
+                    "lvl": 1
+                },
+                {
+                    "skillName": "Gradle",
+                    "skillType": "Build Automation",
+                    "lvl": 1
+                },
+                {
+                    "skillName": "Grunt",
+                    "skillType": "Build Automation",
+                    "lvl": 3
+                },
+                {
+                    "skillName": "Node.js",
+                    "skillType": "Environment",
+                    "lvl": 3
+                },
+                {
+                    "skillName": "JSON",
+                    "skillType": "Notation",
+                    "lvl": 4
+                },
+                {
+                    "skillName": "HTML",
+                    "skillType": "Markup Language",
+                    "lvl": 4
+                },
+                {
+                    "skillName": "Less",
+                    "skillType": "Notation",
+                    "lvl": 4
+                },
+                {
+                    "skillName": "CSS",
+                    "skillType": "Notation",
+                    "lvl": 3
+                }
+            ],
+            "notableFacts" : [
+                {
+                    "fact": "Worked on Agile planning program that used past metrics to determine quarterly and yearly planning.",
+                    "subFacts": [
+                        "Worked on main API with Grails and refactored several services that were built on tools like Gradle and Dropwizard, teams were using TDD and an agile development method.",
+                        "Used VictorOps to have a weekly on-call rotation among team members to watch for outages on our products and fix them quickly if they occur."
+                    ]
+                },
+                {
+                    "fact": "Worked with a smaller team of four people to research and test new frameworks and tools for our future products.",
+                    "subFacts": [
+                        "Used paired programming to test several frameworks including Dropwizard, Spring and Django.",
+                        "Tested relational and non-relational databases such as Oracle, PostgreSQL, MongoDB, and even graph databases such as Neo4j."
+                    ]
+                }
+            ]
+        },
+        {
+            "companyTitle": "Big Fish Games",
+            "companyLocation": "Oakland, CA",
+            "datesOfEmployment": "May 2013 - April 2014",
+            "jobTitle": "Game Engineer",
+            "jobSkills": [
+                {
+                    "skillName": "Javascript",
+                    "skillType": "Language",
+                    "lvl": 5
+                },
+                {
+                    "skillName": "PHP",
+                    "skillType": "Language",
+                    "lvl": 5
+                },
+                {
+                    "skillName": "SQL",
+                    "skillType": "Language",
+                    "lvl": 2
+                },
+                {
+                    "skillName": "JSON",
+                    "skillType": "Notation",
+                    "lvl": 4
+                },
+                {
+                    "skillName": "HTML",
+                    "skillType": "Markup Language",
+                    "lvl": 4
+                }
+            ],
+            "notableFacts" : [
+                {
+                    "fact": "Created three slot machine games, two mini games.",
+                    "subFacts": [
+                        "Used component based system with inheritance to reduce code duplicity in the engine."
+                    ]
+                },
+                {
+                    "fact": "Helped refactor and test new modal creation tool to allow artists to directly create modals.",
+                    "subFacts": [
+                        "Created about fifty modals using this tool.",
+                        "Taught art department to use the tool, removing the engineer from being needed for making modals."
+                    ]
+                }
+            ]
+        },
+        {
+            "companyTitle": "Blizzard Entertainment",
+            "companyLocation": "Irvine, CA",
+            "datesOfEmployment": "May 2012 - August 2012",
+            "jobTitle": "Software Engineer Intern",
+            "jobSkills": [
+                {
+                    "skillName": "C++",
+                    "skillType": "Language",
+                    "lvl": 5
+                },
+                {
+                    "skillName": "C++/CLI",
+                    "skillType": "Language",
+                    "lvl": 4
+                },
+                {
+                    "skillName": "C#",
+                    "skillType": "Language",
+                    "lvl": 10
+                },
+                {
+                    "skillName": "Javascript",
+                    "skillType": "Language",
+                    "lvl": 4
+                },
+                {
+                    "skillName": "Linq",
+                    "skillType": "Language",
+                    "lvl": 1
+                },
+                {
+                    "skillName": "Razor",
+                    "skillType": "Language",
+                    "lvl": 1
+                },
+                {
+                    "skillName": "HTML",
+                    "skillType": "Markup Language",
+                    "lvl": 4
+                }
+            ],
+            "notableFacts" : [
+                {
+                    "fact": "Updated and re-factored reliability and testing tools.",
+                    "subFacts": [
+                        "Implemented sorting and filtering for a web-based application using ASP.NET MVC.",
+                        "Use of tools created helped maintain reliability in Diablo, Warcraft, and Starcraft."
+                    ]
+                }
+            ]
+        }
+    ],
+    "education": {
+        "schoolName": "DigiPen Institute of Technology",
+        "schoolLocation": "Redmond, WA",
+        "graduationDate": "April 2013",
+        "degreeName": "Bachelor of Computer Science in Real-Time Interactive Simulation",
+        "minor": "Minor in Mathematics",
+        "skills": [
+                {
+                    "skillName": "C++",
+                    "skillType": "Language",
+                    "lvl": 20
+                },
+                {
+                    "skillName": "C",
+                    "skillType": "Language",
+                    "lvl": 5
+                },
+                {
+                    "skillName": "Unity",
+                    "skillType": "Engine",
+                    "lvl": 4
+                },
+                {
+                    "skillName": "Linear Algebra",
+                    "skillType": "Mathematics",
+                    "lvl": 4
+                },
+                {
+                    "skillName": "Calculus",
+                    "skillType": "Mathematics",
+                    "lvl": 4
+                },
+                {
+                    "skillName": "3D Physics",
+                    "skillType": "Mathematics",
+                    "lvl": 5
+                },
+                {
+                    "skillName": "Statistics and Probabilities",
+                    "skillType": "Mathematics",
+                    "lvl": 5
+                }
+        ]
+    }
+}

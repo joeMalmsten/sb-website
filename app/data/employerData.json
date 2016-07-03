@@ -1,0 +1,30 @@
+[
+    {
+        "name": "PaperG",
+        "Url": "http://paperg.com/",
+        "logoSrc": "images/logo/paperg.png",
+        "previewSrc": "images/employerPhotos/paperg.png", 
+        "position": "Software Engineer"
+    },
+    {
+        "name": "Rally Software",
+        "Url": "http://rallydev.com/",
+        "logoSrc": "images/logo/rally.png",
+        "previewSrc": "images/employerPhotos/rally.png", 
+        "position": "Software Engineer"
+    },
+    {
+        "name": "Big Fish Games",
+        "Url": "http://www.bigfishgames.com/",
+        "logoSrc": "images/logo/big-fish.png",
+        "previewSrc": "images/employerPhotos/big-fish.png", 
+        "position": "Game Engineer"
+    },
+    {
+        "name": "Blizzard Entertainment",
+        "Url": "http://us.blizzard.com/en-us/",
+        "logoSrc": "images/logo/blizzard.png",
+        "previewSrc": "images/employerPhotos/blizzard.png", 
+        "position": "Software Engineer Intern"
+    }
+]

@@ -1,0 +1,66 @@
+{
+    "name": "fake name",
+    "email": "fake@gmail.com",
+    "phone": "1-234-567-8900",
+    "location": "fake, WA",
+    "photoSrc": "images/ProfilePhoto.png",
+    "baseSkills": [
+        "Raider",
+        "Pvper",
+        "Full Stack Developer"
+    ],
+    "professional": [
+        "I'm a Paladin. I have worked in many mediums including games, mobile apps, and full stack web development. I can work anywhere in Azeroth or Kalimdor and I have no issue working remotely for clients from anywhere in Draenor.",
+        "I bubble hearth"
+    ],
+    "social": {
+        "facebook": "https://www.facebook.com"
+    },
+    "skillSet": [
+        {
+            "name": "Raids",
+            "skillBlocks": [
+                true,
+                true,
+                true,
+                true
+            ]
+        },
+        {
+            "name": "JAVASCRIPT",
+            "skillBlocks": [
+                true,
+                true,
+                true,
+                true
+            ]
+        },
+        {
+            "name": "C#",
+            "skillBlocks": [
+                true,
+                true,
+                false,
+                false
+            ]
+        },
+        {
+            "name": "HTML / CSS3 / SASS / LESS",
+            "skillBlocks": [
+                true,
+                true,
+                true,
+                true
+            ]
+        },
+        {
+            "name": "PHP / JAVA",
+            "skillBlocks": [
+                true,
+                true,
+                false,
+                false
+            ]
+        }
+    ]
+}

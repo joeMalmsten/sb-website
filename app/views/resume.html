@@ -1,0 +1,80 @@
+<div class="resume-container wow bounceInLeft" ng-controller="ResumeController">
+    <div class="container">
+        <div class="row col-xs-12 headline wow bounceInDown">
+             <h2>Resume</h2>
+        </div>
+
+        <div class="resume-body">
+            <div class="row col-xs-12  wow bounceInLeft">
+                <h3 class="section-title">Education</h3>
+            </div>
+            <div class="row resume-items">
+                <div class="col-xs-8 col-md-9 resume-item wow bounceInLeft">
+                    <h4>{{resumeData.education.schoolName}}</h4>
+                    <h5>{{resumeData.education.degreeName}}</h5>
+                    <p>{{resumeData.education.minor}}</p>
+                    <hr class="hidden-xs">
+                </div>
+                <div class="col-xs-4 col-md-3 resume-place wow bounceInRight">
+                    <h4><i class="fa fa-globe"></i> {{resumeData.education.schoolLocation}}</h4>
+                    <i class="fa fa-graduation-cap"></i> {{resumeData.education.graduationDate}}
+                    <hr class="visible-xs">
+                </div>
+            </div>
+
+            <div class="row col-xs-12  wow bounceInLeft">
+                <h3 class="section-title">Technical Skills</h3>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-md-9 resume-item">
+                    <div ng-repeat="(key, value) in skillList | toArray | orderBy: '-skillCount'">
+                        <span class="skill-type wow bounceInLeft">{{value.$key}}:</span>
+                        <span class="wow bounceInRight">{{value.skillString}}</span>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="row col-xs-12  wow bounceInLeft">
+                <h3 class="section-title">Experience</h3>
+            </div>
+            <div class="row resume-items" ng-repeat="job in resumeData.workExperience">
+                <div class="col-xs-8 col-md-9 resume-item">
+                    <h4 class="company-title wow bounceInUp">{{job.companyTitle}}</h4>
+                    <div>
+                    <span class="job-title wow bounceInLeft">{{job.jobTitle}}</span>
+                    <span class="wow bounceInRight">({{job.skillString}})</span>
+                    </div>
+                    <h5 class="wow bounceInLeft"></h5>
+                    </span>
+                    <ul class="row">
+                        <li ng-repeat="fact in job.notableFacts">
+                            <h5 class="notable-fact wow bounceInLeft">{{fact.fact}}</h5>
+                            <ul class="sub-facts wow bounceInRight">
+                                <li ng-repeat="subfact in fact.subFacts">
+                                    <p class="sub-fact">{{subfact}}</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+
+                <div class="col-xs-4 col-md-3 resume-place wow bounceInRight">
+                    <h4><i class="fa fa-globe"></i> {{job.companyLocation}}</h4>
+                    <i class="fa fa-calendar"></i> {{job.datesOfEmployment}}
+                    <hr class="visible-xs">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-8 col-md-9 wow bounceInUp">
+                    <a href="http://www.seriouslybrutal.com/" target="blank_" class="btn btn-default btn-custom-2"><i class="fa fa-cloud-download icon-before"></i> Current Website</a>
+                </div>
+                <div class="col-xs-4 col-md-3 wow bounceInUp">
+                    <a class="btn btn-default btn-custom-2" href="javascript:var%20KICKASSVERSION='2.0';var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='//hi.kickassapp.com/kickass.js';void(0);"><i class="fa fa-bomb icon-before"></i> Destroy this site</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
