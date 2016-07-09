@@ -30,6 +30,11 @@ angular
         controller: 'MainController',
         templateUrl: '../views/main.html',
     });
+    //$routeProvider.when('/roster', {
+     //   controller: 'HistoryController',
+    //    templateUrl: '../views/history.html',
+    //});
+
     $routeProvider.otherwise('/');
 }])
 .filter('toArray', function() { return function(obj) {

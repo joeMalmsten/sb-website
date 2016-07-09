@@ -8,7 +8,7 @@ angular.module('personalSiteApp').controller('MainController', ['$scope', '$time
 
     $scope.template = {
         'top' : '../../views/top.html',
-        'profile' : '../../views/profile.html',
+        'blog' : '../../views/blog.html',
         'resume' : '../../views/resume.html' ,
         'history' : '../../views/history.html'
     };
@@ -78,6 +78,13 @@ angular.module('personalSiteApp').controller('MainController', ['$scope', '$time
     }
 
     $timeout(function() {
+        var load_screen = $("#load_screen");
         initNavbar();
+
+        load_screen.addClass("loaded");
+        $timeout(function() {
+            load_screen.remove();
+        }, 3000);
+
     }, 0);
 }]);
