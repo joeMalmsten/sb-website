@@ -4,23 +4,27 @@
     <div class="container">
         <div><h2>ROSTER</h2></div>
 
-        <div class='row'>
-            <table class='roster-table col-xs-12'>
-                <tr>
-                   <th>Character</th>
-                   <th>Race</th> 
-                   <th>Class</th>
-                   <th>Level</th>
-                   <th>Rank</th>
-                </tr>
-                <tr ng-repeat='member in members' ng-if='member.rank < 8 '>
-                    <td>{{member.character.name}}</td>
-                    <td>{{raceObj[member.character.race].name}}</td>
-                    <td>{{classObj[member.character.class].name}}</td>
-                    <td>{{member.character.level}}</td>
-                    <td>{{guildRankList[member.rank]}}</td>
-                </tr>
-           </table>
-       </div>
+      <div class='row col-xs-12'>
+        <table>
+          <thead>
+            <tr>
+              <th>Character</th>
+              <th>Race</th>
+              <th>Class</th>
+              <th>Level</th>
+              <th>Guild Rank</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat='member in members' ng-if='member.rank < 8 '>
+              <td>{{member.character.name}}</td>
+              <td>{{raceObj[member.character.race].name}}</td>
+              <td>{{classObj[member.character.class].name}}</td>
+              <td>{{member.character.level}}</td>
+              <td>{{guildRankList[member.rank]}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 </div>
