@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('personalSiteApp.companiesPage', ['ngRoute'])
-.controller('HistoryController', ['$scope', '$http', '_', function($scope, $http, _) {
+angular.module('personalSiteApp.roster', ['ngRoute'])
+.controller('RosterController', ['$scope', '$http', '_', function($scope, $http, _) {
 
     $scope.guildRankList = [
         'Guild Master',

@@ -19,8 +19,8 @@ describe('Controller: MainController', function () {
 
     it('should attach an object containing page template to the scope', function () {
         expect(scope.template.top).toBeDefined();
-        expect(scope.template.history).toBeDefined();
-        expect(scope.template.resume).toBeDefined();
-        expect(scope.template.blog).toBeDefined();
+        expect(scope.template.guildNews).toBeDefined();
+        expect(scope.template.guildApplication).toBeDefined();
+        expect(scope.template.roster).toBeDefined();
     });
 });

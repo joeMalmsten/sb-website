@@ -1,0 +1,20 @@
+<div class="profile-container" ng-controller="NewsController">
+    <div id="profile-anchor"></div>
+
+    <div class="container">
+        <div class="row guild-information-container">
+            <div class="col-xs-8">Achievement Points: {{achievementPoints}}</div>
+        </div>
+
+        <table>
+            <tr>
+                <th>character</th>
+                <th>context</th>
+            </tr>
+            <tr ng-repeat='newsItem in news'>
+                <td>{{newsItem.character}}</td>
+                <td>{{newsItem.context}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

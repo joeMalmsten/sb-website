@@ -1,8 +1,8 @@
-<div class="history-container wow bounceInDown" ng-controller="HistoryController">
+<div class="history-container wow bounceInDown" ng-controller="RosterController">
     <div id="history-anchor"></div>
-    
+
     <div class="container">
-        <div><h2>ROSTER</h2></div>
+      <div><h2>ROSTER</h2></div>
 
       <div class='row col-xs-12'>
         <table>
@@ -13,9 +13,9 @@
               <th>Class</th>
               <th>Level</th>
               <th>Guild Rank</th>
-              </tr>
-            </thead>
-            <tbody>
+            </tr>
+          </thead>
+          <tbody>
               <tr ng-repeat='member in members' ng-if='member.rank < 8 '>
               <td>{{member.character.name}}</td>
               <td>{{raceObj[member.character.race].name}}</td>

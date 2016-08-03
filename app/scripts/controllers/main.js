@@ -1,16 +1,23 @@
 'use strict';
 
-angular.module('personalSiteApp').controller('MainController', ['$scope', '$timeout', function($scope, $timeout){
+angular.module('personalSiteApp').controller('MainController', [
+    '$scope',
+    '$timeout',
+    'applicationFactory',
+    function($scope, $timeout, applicationFactory) {
+
     var navbar,
         navHeight,
+        contentContainer,
+        contentTimerHandle,
         threeControls,
         wow;
 
     $scope.template = {
-        'top' : '../../views/top.html',
-        'blog' : '../../views/blog.html',
-        'resume' : '../../views/resume.html' ,
-        'history' : '../../views/history.html'
+        'top': '../../views/top.html',
+        'guildNews': '../../views/news.html',
+        'guildApplication': '../../views/application.html',
+        'roster': '../../views/roster.html'
     };
 
     function initNavbar() {
@@ -18,6 +25,7 @@ angular.module('personalSiteApp').controller('MainController', ['$scope', '$time
          * Navbar
         /* ---------------------------------------------- */
         navbar = $('.navbar');
+        contentContainer = $('.content-container');
         navHeight = navbar.height();
 
         $('body').scrollspy({
@@ -29,12 +37,39 @@ angular.module('personalSiteApp').controller('MainController', ['$scope', '$time
             var elem = $(this),
                 hash = elem.prop('hash'),
                 anchor = $(hash + "-anchor");
+
             if (!anchor.length) {
                 anchor = $(hash);
             }
-            $('html, body').stop().animate({
-                scrollTop: anchor.offset().top
-            }, 1000);
+
+            if (contentTimerHandle) {
+                $timeout.cancel(contentTimerHandle);
+            }
+
+            if (hash === '#roster') {
+                $('html, body').stop().animate({
+                    scrollTop: anchor.offset().top
+                }, 500);
+                contentTimerHandle = $timeout(function() {
+                    contentContainer.addClass('roster-active');
+                }, 500);
+            } else {
+                console.log(applicationFactory);
+                if (contentContainer.hasClass('roster-active')) {
+                    contentContainer.removeClass('roster-active');
+                    contentTimerHandle = $timeout(function() {
+                        $('html, body').stop().animate({
+                            scrollTop: anchor.offset().top
+                        }, 500);
+                    }, 500);
+                } else {
+                    $('html, body').stop().animate({
+                        scrollTop: anchor.offset().top
+                    }, 500);
+                }
+            }
+
+
             e.preventDefault();
             return false;
         });
