@@ -1,0 +1,17 @@
+<div class="profile-container" ng-controller="ProfileController">
+    <div id="profile-anchor"></div>
+
+    <div class="container">
+     <div>Guild Achievement Points: {{bubbles}}</div>
+     <table>
+         <tr>
+            <th>character</th>
+            <th>context</th>
+         </tr>
+         <tr ng-repeat='newsItem in news'>
+            <td>{{newsItem.character}}</td>
+            <td>{{newsItem.context}}</td>
+         </tr>
+     </table>
+    </div>
+</div>

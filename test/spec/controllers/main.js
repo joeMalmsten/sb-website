@@ -21,6 +21,6 @@ describe('Controller: MainController', function () {
         expect(scope.template.top).toBeDefined();
         expect(scope.template.history).toBeDefined();
         expect(scope.template.resume).toBeDefined();
-        expect(scope.template.profile).toBeDefined();
+        expect(scope.template.blog).toBeDefined();
     });
 });

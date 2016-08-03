@@ -1,17 +1,43 @@
 'use strict';
 
 angular.module('personalSiteApp.companiesPage', ['ngRoute'])
-.controller('HistoryController', ['$scope', '$http', "$timeout", function($scope, $http, $timeout) {
-    $http.get('data/employerData.json').success(function(response){
-        $scope.employerData = response;
+.controller('HistoryController', ['$scope', '$http', '_', function($scope, $http, _) {
 
-        // $timeout here forces the owlCarousel to wait until after the angular code has updated the DOM
-        $timeout(function() {
-            $("#owl-employers").owlCarousel({
-                slideSpeed : 300,
-                paginationSpeed : 400,
-                autoPlay: 5000
-            });
-        }, 0);
+    $scope.guildRankList = [
+        'Guild Master',
+        'Co-GM',
+        'Officers',
+        'Senior Raider',
+        'Senior RBGer',
+        'Raider',
+        'RBGer',
+        'Brutal Savage',
+        'Brutal Baby'
+    ];
+
+    $http.get('https://us.api.battle.net/wow/guild/Tichondrius/Seriously%20Brutal?fields=members&locale=en_US&apikey=u2d8h5gkuwtvkegr3wxzcqct85uq48z9').success(function(response) {
+        $scope.members = response.members;
+    });
+
+    $http.get('https://us.api.battle.net/wow/data/character/classes?locale=en_US&apikey=u2d8h5gkuwtvkegr3wxzcqct85uq48z9').success(function(response) {
+        var classObj = {};
+
+
+        _.each(response.classes, function(currentClass) {
+            classObj[currentClass.id] = currentClass;
+        });
+
+        $scope.classObj = classObj;
+    });
+
+    $http.get('https://us.api.battle.net/wow/data/character/races?locale=en_US&apikey=u2d8h5gkuwtvkegr3wxzcqct85uq48z9').success(function(response)             {
+        var raceObj = {};
+
+
+        _.each(response.races, function(currentRace) {
+            raceObj[currentRace.id] = currentRace;
+        });
+
+        $scope.raceObj = raceObj;
     });
 }]);
