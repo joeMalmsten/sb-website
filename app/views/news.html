@@ -10,10 +10,14 @@
             <tr>
                 <th>character</th>
                 <th>context</th>
+                <th>type</th>
+                <th>bonus lists</th>
             </tr>
             <tr ng-repeat='newsItem in news'>
                 <td>{{newsItem.character}}</td>
                 <td>{{newsItem.context}}</td>
+                <td>{{newsItem.type}}</td>
+                <td>{{newsItem.bonusLists}}</td>
             </tr>
         </table>
     </div>

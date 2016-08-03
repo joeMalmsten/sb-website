@@ -13,9 +13,10 @@
         <div class="navbar-collapse collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#roster">ROSTER</a></li>
-                <li><a href="#blog">GUILD NEWS</a></li>
-                <li><a href="#raider-aplication">RAIDER APPLICATION</a></li>
-                <li><a href="#rbg-application">RBG APPLICATION</a></li>
+                <li><a href="#top">HOME</a></li>
+                <li><a href="#news">GUILD NEWS</a></li>
+                <li><a href="#application" ng-click="applicationFactory.type = 'raider';">RAIDER APPLICATION</a></li>
+                <li><a href="#application" ng-click="applicationFactory.type = 'rbg';">RBG APPLICATION</a></li>
             </ul>
         </div>
 
@@ -25,6 +26,6 @@
 <div class="content-container">
     <div id="top" ng-include="template.top"></div>
     <div id="roster" ng-include="template.roster"></div>
-    <div id="guild-news" ng-include="template.guildNews"></div>
-    <div id="guild-application" ng-include="template.guildApplication"></div>
+    <div id="news" ng-include="template.guildNews"></div>
+    <div id="application" ng-include="template.guildApplication"></div>
 </div>
