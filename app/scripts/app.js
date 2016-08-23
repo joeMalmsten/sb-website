@@ -20,20 +20,21 @@ angular
     'ngSanitize',
     'ngTouch',
     'underscore',
+    'util.application',
+    'ui.select',
+    'app.filters',
+    'app.input',
+    'app.table',
     'personalSiteApp.top',
-    'personalSiteApp.resume',
-    'personalSiteApp.profile',
-    'personalSiteApp.companiesPage'
-    ])
+    'personalSiteApp.roster',
+    'personalSiteApp.news',
+    'personalSiteApp.application'
+])
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {
         controller: 'MainController',
-        templateUrl: '../views/main.html',
+        templateUrl: '../views/main.html'
     });
-    //$routeProvider.when('/roster', {
-     //   controller: 'HistoryController',
-    //    templateUrl: '../views/history.html',
-    //});
 
     $routeProvider.otherwise('/');
 }])

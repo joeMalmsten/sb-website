@@ -11,20 +11,23 @@
         </div>
 
         <div class="navbar-collapse collapse" id="navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
+            <ul  ng-class="{'center-disabled': currSection === '#roster' || currSection === '#application'}" class="nav navbar-nav navbar-right">
+                <li ng-class="{'side-active': currSection === '#roster'}"><a ng-click="navToAnchor('#roster');">ROSTER</a></li>
                 <li><a href="#top">HOME</a></li>
-                <li><a href="#blog">GUILD NEWS</a></li>
-                <!--<li><a href="#">Services</a></li>-->
-                <li><a href="#history">ROSTER</a></li>
-                <li><a href="#resume">RECRUITMENT</a></li>
-                <!--<li><a href="#">Portfolio</a></li>-->
+                <li><a href="#news">GUILD NEWS</a></li>
+                <li ng-class="{'side-active': (currSection === '#application' && applicationFactory.type === 'raider')}"><a ng-click="applicationFactory.type = 'raider'; navToAnchor('#application');">RAIDER APPLICATION</a></li>
+                <li ng-class="{'side-active': (currSection === '#application' && applicationFactory.type === 'rbg')}"><a ng-click="applicationFactory.type = 'rbg'; navToAnchor('#application');">RBG APPLICATION</a></li>
             </ul>
         </div>
 
     </div>
 </nav>
 
-<div id="top" ng-include="template.top"></div>
-<!--<div id="blog" ng-include="template.blog"></div>-->
-<div id="history" ng-include="template.history"></div>
-<!--<div id="resume" ng-include="template.resume"></div>-->
+<div class="scroll-container">
+    <div class="content-container">
+        <div id="top" ng-include="template.top"></div>
+        <div id="roster" ng-include="template.roster"></div>
+        <div id="news" ng-include="template.news"></div>
+        <div id="application" ng-include="template.application"></div>
+    </div>
+</div>
