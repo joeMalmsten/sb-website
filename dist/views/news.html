@@ -5,9 +5,29 @@
         <div class="row guild-information-container">
             <div class="col-xs-8">Achievement Points: {{achievementPoints}}</div>
         </div>
-
-        <div class="row guild-updates-container">
-            <div class="col-xs-5 game-updates-container">
+        <div class="row recruitment-demand-container">
+            <div class="col-xs-12 recruitment-status">
+                <div class="col-xs-12 class-demand">Guild Class Demand</div>
+                <div class="col-xs-1 recruitment-class"  ng-repeat="(key, value) in recruitmentStatus">
+                    <div class="class-name {{key}}">{{value.name}}</div>
+                    <div class="class-icon {{key}}"></div>
+                    <div class="class-status {{value.demand}}">{{value.demand}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8 guild-news-container">
+                <div class="col-xs-12 blog-header">Notice Board</div>
+                <div class="blog-item" ng-repeat="newsItem in guildNews" ng-class="{'not-first' : !$first}">
+                    <div class="blog-title">{{newsItem.title}}</div>
+                    <div class="blog-info">by {{newsItem.author}}, published on {{newsItem.date}}</div>
+                    <div class="blog-content">
+                        <img class="blog-image" ng-if="::(newsItem.imgSrc)" ng-src="{{newsItem.imgSrc}}" />
+                        <p>{{newsItem.text}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4 game-updates-container">
                 <div class="col-xs-12 game-updates-header">In-Game Updates</div>
                 <div class="guild-game-updates">
                     <div class="news-item"
@@ -15,8 +35,8 @@
                          ng-class="{'raid-news': newsItem.context.indexOf('raid') !== -1,
                                     'guild-news': newsItem.type === 'guildAchievement'}">
                         <div class="news-header">
-                            <span ng-if="::(newsItem.context.indexOf('raid') !== -1)">Item Received</span>
-                            <span ng-if="::(newsItem.type === 'guildAchievement')">Achievement Unlocked</span>
+                            <span ng-if="::(newsItem.context.indexOf('raid') !== -1)">Loot Acquired</span>
+                            <span ng-if="::(newsItem.type === 'guildAchievement')">Guild Achievement Unlocked</span>
                         </div>
 
                         <div class="news-content">
@@ -47,20 +67,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-7 recruitment-status">
-                <div class="col-xs-12 class-demand">Guild Class Demand</div>
-                <div class="col-xs-3 recruitment-class"  ng-repeat="(key, value) in recruitmentStatus">
-                    <div class="class-icon {{key}}"></div>
-                    <div class="class-status {{value}}">{{value}}</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row guild-news-container">
-            <div class="col-xs-12 news-item" ng-repeat="newsItem in guildNews">
-                <img class="news-image" ng-src="newsItem.imgSrc" />
-                <p>{{newsItem.text}}</p>
             </div>
         </div>
     </div>
