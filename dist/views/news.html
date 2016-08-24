@@ -1,24 +1,67 @@
-<div class="profile-container" ng-controller="NewsController">
-    <div id="profile-anchor"></div>
+<div class="news-container" ng-controller="NewsController">
+    <div id="news-anchor"></div>
 
     <div class="container">
         <div class="row guild-information-container">
             <div class="col-xs-8">Achievement Points: {{achievementPoints}}</div>
         </div>
 
-        <table>
-            <tr>
-                <th>character</th>
-                <th>context</th>
-                <th>type</th>
-                <th>bonus lists</th>
-            </tr>
-            <tr ng-repeat='newsItem in news'>
-                <td>{{newsItem.character}}</td>
-                <td>{{newsItem.context}}</td>
-                <td>{{newsItem.type}}</td>
-                <td>{{newsItem.bonusLists}}</td>
-            </tr>
-        </table>
+        <div class="row guild-updates-container">
+            <div class="col-xs-5 game-updates-container">
+                <div class="col-xs-12 game-updates-header">In-Game Updates</div>
+                <div class="guild-game-updates">
+                    <div class="news-item"
+                         ng-repeat="newsItem in news track by $index"
+                         ng-class="{'raid-news': newsItem.context.indexOf('raid') !== -1,
+                                    'guild-news': newsItem.type === 'guildAchievement'}">
+                        <div class="news-header">
+                            <span ng-if="::(newsItem.context.indexOf('raid') !== -1)">Item Received</span>
+                            <span ng-if="::(newsItem.type === 'guildAchievement')">Achievement Unlocked</span>
+                        </div>
+
+                        <div class="news-content">
+                            <div ng-if="::(newsItem.isItem)">
+                                <img class="news-icon" ng-src="http://media.blizzard.com/wow/icons/56/{{newsItem.itemData.icon}}.jpg" />
+                                <div class="news-item-text">
+                                    <div class="news-text-title">{{newsItem.itemData.name}}</div>
+                                    <div class="news-character">
+                                        <span>Brutally attained by {{newsItem.character}}</span>
+                                    </div>
+                                    <div class="news-text-date">
+                                        <span>on {{newsItem.timestamp | date:"MM/dd/yyyy 'at' h:mma"}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-if="::(newsItem.achievement)">
+                                <img class="news-icon" ng-src="http://media.blizzard.com/wow/icons/56/{{newsItem.achievement.icon}}.jpg" />
+                                <div class="news-item-text">
+                                    <div class="news-text-title">{{newsItem.achievement.title}}</div>
+                                    <div class="news-character">
+                                        <span>Brutally attained by {{newsItem.character}}</span>
+                                    </div>
+                                    <div class="news-text-title">
+                                        <span>on {{newsItem.timestamp | date:"MM/dd/yyyy 'at' h:mma"}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7 recruitment-status">
+                <div class="col-xs-12 class-demand">Guild Class Demand</div>
+                <div class="col-xs-3 recruitment-class"  ng-repeat="(key, value) in recruitmentStatus">
+                    <div class="class-icon {{key}}"></div>
+                    <div class="class-status {{value}}">{{value}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row guild-news-container">
+            <div class="col-xs-12 news-item" ng-repeat="newsItem in guildNews">
+                <img class="news-image" ng-src="newsItem.imgSrc" />
+                <p>{{newsItem.text}}</p>
+            </div>
+        </div>
     </div>
 </div>
