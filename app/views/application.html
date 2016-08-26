@@ -1,4 +1,149 @@
-<div class="resume-container wow bounceInLeft" ng-controller="ApplicationController">
+<div class="application-container wow bounceInLeft" ng-controller="ApplicationController">
     <div class="container">
+
+        <div class="row application-section">
+            <div class="col-xs-3">
+                <div class="input-group">
+                    <span class="input-group-addon" id="character-name">Name*</span>
+                    <input type="text" ng-model="guildApp.name" class="form-control" maxlength="32" placeholder="Character name" aria-describedby="character-name">
+                </div>
+            </div>
+        </div>
+
+        <div class="row application-section">
+            <div class="col-xs-3">
+                <div class="input-group">
+                    <span class="input-group-addon" id="battletag">Battletag</span>
+                    <input type="text" ng-model="guildApp.battletag" class="form-control" maxlength="32" placeholder="Battletag" aria-describedby="battletag">
+                </div>
+            </div>
+        </div>
+
+        <div class="row application-section">
+            <div class="col-xs-3">
+                <div class="input-group">
+                    <span class="input-group-addon" id="player-age">Age*</span>
+                    <input type="number" ng-model="guildApp.age" class="form-control" min="1" max="119" placeholder="Player age" aria-describedby="player-age">
+                </div>
+            </div>
+        </div>
+
+        <div class="row application-section">
+            <div class="col-xs-12">
+                <div>Player Class*</div>
+                <div class="btn-group">
+                    <button class="btn btn-primary {{key}}" ng-class="{'active' : guildApp.class === key}" type="button" ng-click="setClass(key);" ng-repeat="(key, value) in guildClasses">{{value.name}}</button>
+                </div>
+                <div ng-if="guildClasses[guildApp.class] && guildClasses[guildApp.class].demand === 'closed'">
+                    At the moment our capacity for this class is full, however if you feel you are highly skilled and we should make an exception continue with the application and we will still look at it.
+                </div>
+            </div>
+        </div>
+
+        <div class="row application-section">
+            <div class="col-xs-12">
+                <div>Preferred Roles*</div>
+                <div>Rate in the order you prefer to play them, 1 is the favorite, 3 is the least favorite. Leave blank if role does not apply.</div>
+            </div>
+            <div class="col-xs-3">
+                <div class="input-group">
+                    <span class="input-group-addon" id="role-tank">Tank</span>
+                    <input type="number" ng-model="guildApp.roles.tank" class="form-control" min="1" max="3" placeholder="1" aria-describedby="role-tank">
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="input-group">
+                    <span class="input-group-addon" id="role-healer">Healer</span>
+                    <input type="number" ng-model="guildApp.roles.healer" class="form-control" min="1" max="3" placeholder="2" aria-describedby="role-healer">
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="input-group">
+                    <span class="input-group-addon" id="role-damage">Damage</span>
+                    <input type="number" ng-model="guildApp.roles.damage" class="form-control" min="1" max="3" placeholder="3" aria-describedby="role-damage">
+                </div>
+            </div>
+        </div>
+
+        <div class="row application-section">
+            <div class="col-xs-12">
+                <div>Interests</div>
+                <div>What of the below activities interests you (select all that apply).</div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" ng-class="{'active' : guildApp.interests.ratedArena}" type="button" ng-click="guildApp.interests.ratedArena = !guildApp.interests.ratedArena">
+                        Rated Arena
+                    </button>
+                    <button class="btn btn-primary" ng-class="{'active' : guildApp.interests.raiding}" type="button" ng-click="guildApp.interests.raiding = !guildApp.interests.raiding">
+                        Raiding
+                    </button>
+                    <button class="btn btn-primary" ng-class="{'active' : guildApp.interests.worldPvP}" type="button" ng-click="guildApp.interests.worldPvP = !guildApp.interests.worldPvP">
+                        World PvP
+                    </button>
+                    <button class="btn btn-primary" ng-class="{'active' : guildApp.interests.arena}" type="button" ng-click="guildApp.interests.arena = !guildApp.interests.arena">
+                        Arena
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row raiding-policy" ng-if="guildApp.interests.raiding">
+            <div class="col-xs-12 application-section">
+                <div>Barring special occasions all raiders are required to participate in all progression raids.</div>
+                <div>Will you be able to appear in all required raids?</div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" ng-class="{'active' : guildApp.raiding.canAppear}" type="button" ng-click="guildApp.raiding.canAppear = true">
+                        Yes
+                    </button>
+                    <button class="btn btn-primary" ng-class="{'active' : guildApp.raiding.canAppear === false}" type="button" ng-click="guildApp.raiding.canAppear = false">
+                        No
+                    </button>
+                </div>
+            </div>
+            <div class="col-xs-12 application-section" ng-if="guildApp.interests.raiding && guildApp.raiding.canAppear === false">
+                <div>Why not? (max length 300 characters)</div>
+                <textarea ng-model="guildApp.raiding.absenceReason" maxlength="300" placeholder="Explain why you won't be able to make all raids."></textarea>
+            </div>
+        </div>
+        <div class="row teamspeak-section">
+            <div class="col-xs-12 application-section">
+                <div>Can you use Teamspeak?</div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" ng-class="{'active' : guildApp.teamspeak.willing}" type="button" ng-click="guildApp.teamspeak.willing = true">
+                        Yes
+                    </button>
+                    <button class="btn btn-primary" ng-class="{'active' : guildApp.teaspeak.willing === false}" type="button" ng-click="guildApp.teamspeak.willing = false">
+                        No
+                    </button>
+                </div>
+            </div>
+            <div class="col-xs-12 application-section">
+                <div>Do you have a microphone/headset or are you willing to buy one?</div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" ng-class="{'active' : guildApp.teamspeak.mic}" type="button" ng-click="guildApp.teamspeak.mic = true">
+                        Yes
+                    </button>
+                    <button class="btn btn-primary" ng-class="{'active' : guildApp.teamspeak.mic === false}" type="button" ng-click="guildApp.teamspeak.mic = false">
+                        No
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row application-section">
+            <div class="col-xs-12">
+                <div>Is there anything about you that you would like to share with us while we consider your application? Feel Free to describe yourself and your hobbies, let us get to know you.</div>
+                <textarea ng-model="guildApp.aboutPlayer" maxlength="300"></textarea>
+            </div>
+        </div>
+        <div class="row application-section">
+            <div class="col-xs-12">
+                <div>Lastly, what made you want to join Seriously Brutal?</div>
+                <textarea ng-model="guildApp.aboutPlayer" maxlength="300"></textarea>
+            </div>
+        </div>
+        <div class="row application-section">
+            <div class="col-xs-12">
+                <button class="btn btn-primary" type="button" ng-click="submitApplication();">Submit Application</button>
+            </div>
+        </div>
     </div>
 </div>

@@ -15,8 +15,7 @@
                 <li ng-class="{'side-active': currSection === '#roster'}"><a ng-click="navToAnchor('#roster');">ROSTER</a></li>
                 <li><a href="#top">HOME</a></li>
                 <li><a href="#news">GUILD NEWS</a></li>
-                <li ng-class="{'side-active': (currSection === '#application' && applicationFactory.type === 'raider')}"><a ng-click="applicationFactory.type = 'raider'; navToAnchor('#application');">RAIDER APPLICATION</a></li>
-                <li ng-class="{'side-active': (currSection === '#application' && applicationFactory.type === 'rbg')}"><a ng-click="applicationFactory.type = 'rbg'; navToAnchor('#application');">RBG APPLICATION</a></li>
+                <li ng-class="{'side-active': currSection === '#application'}"><a ng-click="applicationFactory.type = 'raider'; navToAnchor('#application');">GUILD APPLICATION</a></li>
             </ul>
         </div>
 

@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('personalSiteApp.news', ['ngRoute'])
-.controller('NewsController', ['$scope', '$http', function($scope, $http) {
+.controller('NewsController', ['$scope', '$http', 'applicationFactory',
+function($scope, $http, applicationFactory) {
 
     function getItem(itemId) {
         return $http.get('https://us.api.battle.net/wow/item/' + itemId + '?locale=en_US&apikey=dwxja88hs8cahytsqvuvk4wrqhf4b5ds');
@@ -39,54 +40,5 @@ angular.module('personalSiteApp.news', ['ngRoute'])
         }
     ];
 
-    $scope.recruitmentStatus = {
-        'death-knight': {
-            name: 'Death Knight',
-            demand: 'high'
-        },
-        'warrior': {
-            name: 'Warrior',
-            demand: 'high'
-        },
-        'paladin': {
-            name: 'Paladin',
-            demand: 'high'
-        },
-        'shaman': {
-            name: 'Shaman',
-            demand: 'high'
-        },
-        'hunter': {
-            name: 'Hunter',
-            demand: 'high'
-        },
-        'rogue': {
-            name: 'Rogue',
-            demand: 'high'
-        },
-        'druid': {
-            name: 'Druid',
-            demand: 'high'
-        },
-        'demon-hunter': {
-            name: 'Demon Hunter',
-            demand: 'high'
-        },
-        'monk': {
-            name: 'Monk',
-            demand: 'high'
-        },
-        'warlock': {
-            name: 'Warlock',
-            demand: 'high'
-        },
-        'priest': {
-            name: 'Priest',
-            demand: 'high'
-        },
-        'mage': {
-            name: 'Mage',
-            demand: 'high'
-        }
-    };
+    $scope.recruitmentStatus = applicationFactory.classStatus;
 }]);

@@ -1,10 +1,7 @@
 'use strict';
 
-angular.module('personalSiteApp').controller('MainController', [
-    '$scope',
-    '$timeout',
-    'applicationFactory',
-    function($scope, $timeout, applicationFactory) {
+angular.module('personalSiteApp').controller('MainController', ['$scope', '$timeout',
+function($scope, $timeout) {
 
     var navbar,
         navHeight,
@@ -20,10 +17,11 @@ angular.module('personalSiteApp').controller('MainController', [
         'roster': '../../views/roster.html'
     };
 
-    $scope.applicationFactory = applicationFactory;
-
     $scope.navToAnchor = function(hash) {
-        var anchor = $(hash + '-anchor');
+        var anchor = $(hash + '-anchor'),
+            rosterHash = '#roster',
+            appHash = '#application',
+            animateTime = 333;
 
         if (!anchor.length) {
             anchor = $(hash);
@@ -34,31 +32,70 @@ angular.module('personalSiteApp').controller('MainController', [
             contentTimerHandle = null;
         }
 
-        $('html, body').stop().animate({
-            scrollTop: anchor.offset().top
-        }, 500);
+        if ($scope.currSection === rosterHash) {
+            if (hash !== rosterHash) {
+                $('html, body').stop().animate({
+                    scrollTop: 0
+                }, animateTime);
 
-        if (hash === '#roster') {
-            contentTimerHandle = $timeout(function() {
-                contentContainer.addClass('roster-active');
-                $scope.currSection = hash;
-            }, 500);
-        } else if (hash === '#application') {
-            contentTimerHandle = $timeout(function() {
-                contentContainer.addClass('application-active');
-                $scope.currSection = hash;
-            }, 500);
-        } else {
-            if (contentContainer.hasClass('roster-active')) {
                 contentTimerHandle = $timeout(function() {
                     contentContainer.removeClass('roster-active');
-                    $scope.currSection = hash;
-                }, 500);
-            } else if (contentContainer.hasClass('application-active')) {
+                    if (hash === appHash) {
+                        contentContainer.addClass('application-active');
+                    }
+
+                    contentTimerHandle = $timeout(function() {
+                        $('html, body').stop().animate({
+                            scrollTop: anchor.offset().top
+                        }, animateTime);
+                        $scope.currSection = hash;
+                    }, animateTime);
+                }, animateTime);
+            }
+        } else if ($scope.currSection === appHash) {
+            if (hash !== appHash) {
+                $('html, body').stop().animate({
+                    scrollTop: 0
+                }, animateTime);
+
                 contentTimerHandle = $timeout(function() {
                     contentContainer.removeClass('application-active');
+                    if (hash === rosterHash) {
+                        contentContainer.addClass('roster-active');
+                    }
+
+                    contentTimerHandle = $timeout(function() {
+                        $('html, body').stop().animate({
+                            scrollTop: anchor.offset().top
+                        }, animateTime);
+                        $scope.currSection = hash;
+                    }, animateTime);
+                }, animateTime);
+            }
+        } else {
+            if (hash === rosterHash) {
+                contentContainer.addClass('roster-active');
+
+                $timeout(function() {
+                    $('html, body').stop().animate({
+                        scrollTop: anchor.offset().top
+                    }, animateTime);
                     $scope.currSection = hash;
-                }, 500);
+                }, animateTime);
+            } else if (hash === appHash) {
+                contentContainer.addClass('application-active');
+
+                $timeout(function() {
+                    $('html, body').stop().animate({
+                        scrollTop: anchor.offset().top
+                    }, animateTime);
+                    $scope.currSection = hash;
+                }, animateTime);
+            } else {
+                $('html, body').stop().animate({
+                    scrollTop: anchor.offset().top
+                }, animateTime);
+                $scope.currSection = hash;
             }
         }
     };
