@@ -1,3 +1,4 @@
+/*globals emailjs*/
 'use strict';
 
 angular.module('personalSiteApp.application', ['ngRoute'])
@@ -22,6 +23,6 @@ function($scope, applicationFactory) {
     };
 
     $scope.submitApplication = function() {
-        console.log($scope.guildApp);
+        emailjs.send('seriouslybrutalgmail', 'guildapplication', $scope.guildApp);
     };
 }]);
