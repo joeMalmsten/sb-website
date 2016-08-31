@@ -2,8 +2,8 @@
 'use strict';
 
 angular.module('personalSiteApp.application', ['ngRoute'])
-.controller('ApplicationController', ['$scope', 'applicationFactory',
-function($scope, applicationFactory) {
+.controller('ApplicationController', ['$scope', '$route', 'applicationFactory',
+function($scope, $route, applicationFactory) {
 
     $scope.guildClasses = applicationFactory.classStatus;
 
@@ -23,6 +23,8 @@ function($scope, applicationFactory) {
     };
 
     $scope.submitApplication = function() {
-        emailjs.send('seriouslybrutalgmail', 'guildapplication', $scope.guildApp);
+        emailjs.send('seriouslybrutalgmail', 'guildapplication', $scope.guildApp).then(function() {
+            $route.reload();
+        });
     };
 }]);

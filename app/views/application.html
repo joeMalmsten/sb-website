@@ -4,7 +4,7 @@
         <div class="row application-section">
             <div class="col-xs-3">
                 <div class="input-group">
-                    <span class="input-group-addon" id="character-name">Name*</span>
+                    <span class="input-group-addon" id="character-name">Name</span>
                     <input type="text" ng-model="guildApp.name" class="form-control" maxlength="32" placeholder="Character name" aria-describedby="character-name">
                 </div>
             </div>
@@ -22,7 +22,7 @@
         <div class="row application-section">
             <div class="col-xs-3">
                 <div class="input-group">
-                    <span class="input-group-addon" id="player-age">Age*</span>
+                    <span class="input-group-addon" id="player-age">Age</span>
                     <input type="number" ng-model="guildApp.age" class="form-control" min="1" max="119" placeholder="Player age" aria-describedby="player-age">
                 </div>
             </div>
@@ -30,7 +30,7 @@
 
         <div class="row application-section">
             <div class="col-xs-12">
-                <div>Player Class*</div>
+                <div>Player Class</div>
                 <div class="btn-group">
                     <button class="btn btn-primary {{key}}" ng-class="{'active' : guildApp.class === key}" type="button" ng-click="setClass(key);" ng-repeat="(key, value) in guildClasses">{{value.name}}</button>
                 </div>

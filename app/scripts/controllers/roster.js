@@ -5,11 +5,11 @@ angular.module('personalSiteApp.roster', ['ngRoute', 'app.table'])
 
     var guildRankList = [
             'Guild Master',
-            'Co-GM',
-            'Officers',
-            'Team Officer',
-            'RBG Team',
-            'Raid Team',
+            'CO-GM',
+            'CAPT',
+            '1st LT',
+            'CPL',
+            'PFC',
             'Senior',
             'Salty',
             'Boot',

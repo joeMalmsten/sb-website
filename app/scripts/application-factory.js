@@ -6,7 +6,7 @@ angular.module('util.application', [])
         classStatus: {
             'death-knight': {
                 name: 'Death Knight',
-                demand: 'closed'
+                demand: 'low'
             },
             'warrior': {
                 name: 'Warrior',
@@ -34,15 +34,15 @@ angular.module('util.application', [])
             },
             'demon-hunter': {
                 name: 'Demon Hunter',
-                demand: 'closed'
+                demand: 'low'
             },
             'monk': {
                 name: 'Monk',
-                demand: 'low'
+                demand: 'high'
             },
             'warlock': {
                 name: 'Warlock',
-                demand: 'low'
+                demand: 'high'
             },
             'priest': {
                 name: 'Priest',
